@@ -1,5 +1,7 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
+const dotenv = require('dotenv')
+require('dotenv').config()
 const ytdl = require('ytdl-core')
 const prefix = '!'
 
@@ -51,4 +53,4 @@ client.on('message', message => {
    }
  })
 
-client.login('ODAxODYxODQ0NzYyNjI0MDYx.YAm2CQ.0S2M9keFNPtoryLPpLvx96cTaBY')
+client.login(process.env.token)
