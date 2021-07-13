@@ -1,5 +1,5 @@
 {
-  "name": "Subutsu",
+  "name": "discord_bot_js",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -13,6 +13,7 @@
     "@discordjs/opus": "^0.5.3",
     "discord": "^0.8.2",
     "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0",
     "ffmpeg-static": "^4.4.0",
     "ytdl-core": "^4.8.3"
   }
