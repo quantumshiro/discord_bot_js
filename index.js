@@ -3,7 +3,7 @@ const client = new Discord.Client()
 const dotenv = require('dotenv')
 require('dotenv').config()
 const ytdl = require('ytdl-core')
-const prefix = '!'
+const prefix = '%'
 
 client.on('ready', () => {
     console.log('${client.user.tag}でログインしています。')
@@ -20,17 +20,17 @@ client.on('message', message => {
     const [command, ...args] = message.content.slice(prefix.length).split(' ')
     if (command === 'timer') {
         // 引数から待ち時間を取り出す
-        const seconds = Number(args[0])
-        message.channel.send(`タイマーを${seconds}秒に設定しました。`)
+        const minutes = Number(args[0])
+        message.channel.send(`タイマーを${minutes}分に設定しました。`)
         setTimeout(() => {
-            message.reply(`${seconds}秒経ちました`)
-        }, seconds * 1000) // setTimeoutに指定するのはミリ秒なので秒数に1000を掛ける
+            message.reply(`${minutes}分経ちました`)
+        }, minutes * 1000 * 60) // setTimeoutに指定するのはミリ秒なので秒数に1000を掛ける
     }
 })
 
  client.on('message', async message => {
    // メッセージが "!yt" からはじまっていてサーバー内だったら実行する
-   if (message.content.startsWith('!yt') && message.guild) {
+   if (message.content.startsWith('%yt') && message.guild) {
      // メッセージから動画URLだけを取り出す
      const url = message.content.split(' ')[1]
      // まず動画が見つからなければ処理を止める
